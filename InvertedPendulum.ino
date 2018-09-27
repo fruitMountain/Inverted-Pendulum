@@ -11,6 +11,8 @@ void setup(){
 }
 
 void loop(){
+  float X = acc.ReadX();
+  float Y = acc.ReadY();
   float Theta = acc.GetTheta();
-  Serial.print(Theta);
-}
+  Serial.println(Theta);
+  }

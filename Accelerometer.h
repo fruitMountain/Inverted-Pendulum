@@ -17,58 +17,37 @@ class Accelerometer{
   // Function for reading X axis acceleration
   float ReadX(){
     A = analogRead(PinX);
-    X = (A - 330) / 62;
+    X = (A - 513) / 100;
     return X;
   };
 
   // Function for reading Y axis acceleration
   float ReadY(){
   B = analogRead(PinY);
-  Y = (B - 330) / 60;
+  Y = (B - 513) / 100;
   return Y;
   };
 
   // Function for reading Z axis acceleration
   float ReadZ(){
   C = analogRead(PinZ);
-  Z = (C - 330) / 71;
+  Z = (C - 513) / 100;
   return Z;
   };
 
   // A function for returning the angle of the accelerometer rotated on the z axis
   float GetTheta(){
-    Theta = atan2(ReadY(),ReadX());
+    Theta = atan2(-1*ReadX(),-1*ReadY());
     return Theta;
   }
+
+  void Debug() {
+    Serial.print("X= ");
+    Serial.print(analogRead(PinX));
+    Serial.print(" Y= ");
+    Serial.println(analogRead(PinY));
+  }
+
 };
-
-  /*
-  Serial.print("X = ");
-  Serial.print(A);
-  Serial.print("\t");
-  Serial.println(X);
-  Serial.print("Y = ");
-  Serial.print(B);
-  Serial.print("\t");
-  Serial.println(Y);
-  Serial.print("Z = ");
-  Serial.print(C);
-  Serial.print("\t");
-  Serial.println(Z);
-  */
-
-/*
-  Theta = atan2(Y,X);
-  Serial.print(Theta);
-
-  delay(500);
-}
-*/
-
-/*
-  -1G = 260
-  0 G = 330
-  1 G = 390
-*/
 
 #endif
