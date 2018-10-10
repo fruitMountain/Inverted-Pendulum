@@ -12,32 +12,10 @@ class Accelerometer{
   // Define variables for analog pins:
   int PinX, PinY, PinZ;
   //Define variables for handling readout
-  float A, B, C, X, Y, Z, Theta;
-
-  // Function for reading X axis acceleration
-  float ReadX(){
-    A = analogRead(PinX);
-    X = (A - 513) / 100;
-    return X;
-  };
-
-  // Function for reading Y axis acceleration
-  float ReadY(){
-  B = analogRead(PinY);
-  Y = (B - 513) / 100;
-  return Y;
-  };
-
-  // Function for reading Z axis acceleration
-  float ReadZ(){
-  C = analogRead(PinZ);
-  Z = (C - 513) / 100;
-  return Z;
-  };
 
   // A function for returning the angle of the accelerometer rotated on the z axis
   float GetTheta(){
-    Theta = atan2(-1*ReadX(),-1*ReadY());
+    float Theta = atan2(-1*ReadX(),-1*ReadY());
     return Theta;
   }
 
@@ -47,6 +25,28 @@ class Accelerometer{
     Serial.print(" Y= ");
     Serial.println(analogRead(PinY));
   }
+
+ private:
+  // Function for reading X axis acceleration
+  float ReadX(){
+    int A = analogRead(PinX);
+    float X = (A - 513) / 100;
+    return X;
+  };
+
+  // Function for reading Y axis acceleration
+  float ReadY(){
+    int B = analogRead(PinY);
+    float Y = (B - 513) / 100;
+    return Y;
+  };
+
+  // Function for reading Z axis acceleration
+  float ReadZ(){
+    int C = analogRead(PinZ);
+    float Z = (C - 513) / 100;
+    return Z;
+  };
 
 };
 
