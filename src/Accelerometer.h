@@ -9,9 +9,12 @@
 
 class Accelerometer{
  public:
-  // Define variables for analog pins:
-  int PinX, PinY, PinZ;
-  //Define variables for handling readout
+  // The Constructor
+  Accelerometer(int x1, int x2, int x3){
+    PinX = x1;
+    PinY = x2;
+    PinZ = x3;
+  }
 
   // A function for returning the angle of the accelerometer rotated on the z axis
   float GetTheta(){
@@ -27,6 +30,9 @@ class Accelerometer{
   }
 
  private:
+  // Define variables for analog pins:
+  int PinX, PinY, PinZ;
+
   // Function for reading X axis acceleration
   float ReadX(){
     int A = analogRead(PinX);
