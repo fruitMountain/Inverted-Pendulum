@@ -31,5 +31,11 @@
 *.out
 *.app
 
+# Weird Arduino Files
+*.eep
+*.elf
+*.hex
+*.sizeok
+
 # Compiled Files
 bin/
