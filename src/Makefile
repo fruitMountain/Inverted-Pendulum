@@ -5,7 +5,7 @@
 
 ### PROJECT_DIR
 ### This is the path to where you have created/cloned your project
-PROJECT_DIR       =/Users/sethberryhill/Arduino/341/InvertedPendulum
+PROJECT_DIR       := $(realpath ..)
 #If you don't put the makefile-Arduino folder in the project uncomment this:
 #MAKEFILE_DIR       =/Users/sethberryhill/Arduino/MyArduinoProject
 
@@ -58,7 +58,7 @@ CXXFLAGS_STD      = -std=gnu++11
 
 ### CPPFLAGS
 ### Flags you might want to set for debugging purpose. Comment to stop.
-CXXFLAGS          = -pedantic -Wall -Wextra
+CXXFLAGS          = -pedantic -Wall -Wextra -I$(PROJECT_DIR)/include
 
 ### If avr-gcc -v is higher than 4.9, activate coloring of the output
 ifeq "$(AVR_GCC_VERSION)" "1"

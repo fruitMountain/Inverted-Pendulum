@@ -13,6 +13,6 @@ void setup(){
 }
 
 void loop(){
-  float Theta = acc.GetTheta();
-  float CleanTheta = filter.exp(Theta);
+  //float Theta = acc.GetTheta();
+  //float CleanTheta = filter.exp(Theta);
   }
