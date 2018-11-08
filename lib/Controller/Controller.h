@@ -8,7 +8,7 @@
 class Controller{
  private:
   int Cp, Ci, Cd;
-  int ESum;
+  int ESum, Emem;
 
   int Proportional(int error);
   int Integral(int error);
@@ -18,5 +18,3 @@ class Controller{
   Controller(int x1, int x2, int x3);
   float PID(int error);
 }
-
-#endif

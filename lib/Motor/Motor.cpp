@@ -47,6 +47,11 @@ void Motor::CounterClockwise(int speed){
   }
 }
 
+void Motor::Stop(){
+  digitalWrite(In1, LOW);
+  digitalWrite(In2, LOW);
+}
+
   // Quick function for alternating the motor
 void Motor::debug(){
   CounterClockwise(255);

@@ -12,15 +12,17 @@ int Controller::Proportional(int error){
 }
 
 int Controller::Integral(int error){
-  ESum = ESum + error;
+  int ESum = ESum + error;
   return ESum;
 }
 
 int Controller::Derivative(int error){
-  // TODO
-  return error;
+  int Ediff = error - Emem;
+  Emem = error
+  return Ediff;
 }
 
 float PID(int error){
-  temp = Proportional(error) + Integral(error) + Derivative(error);
+  int gain = Proportional(error) + Integral(error) + Derivative(error);
+  return(gain)
 }

@@ -1,8 +1,7 @@
 //Arduino
 //Filter Accelerometer readings
 
-#ifndef FILTER_H // If filter_h is not a defined variable do the following
-#define FILTER_H// Define filter_h as a variable.
+#pragma once
 // This way the following code only runs once.
 
 #include <Arduino.h> //Allows arduino commands
@@ -11,13 +10,14 @@
 
 
 class Filter{
- public:
-  float history[5] = {0,0,0,0,0};
-  float decay;
-  float fresh;
+ private:
+  // These better darn well be the same number, or else!
+  const int terms = 5;
+  float history[5];
 
+  float decay;
+
+ public:
+  Filter(float x1);
   float exp(float fresh);
 };
-
-
-#endif

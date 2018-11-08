@@ -8,28 +8,28 @@ Accelerometer::Accelerometer(int x1, int x2, int x3){
 }
 
 float Accelerometer::GetTheta(){
-  float Theta = atan2(-1*ReadX(),-1*ReadY());
+  float Theta = atan2(-1 * ReadY(),-1 * ReadX());
   return Theta;
 }
 
 void Accelerometer::Debug() {
   Serial.print("X= ");
-  Serial.print(analogRead(PinX));
+  Serial.print(ReadX());
   Serial.print(" Y= ");
-  Serial.println(analogRead(PinY));
+  Serial.println(ReadY());
 }
 
 // Function for reading X axis acceleration
 float Accelerometer::ReadX(){
   int A = analogRead(PinX);
-  float X = (A - 513) / 100;
+  float X = (A - 513.) / 100.;
   return X;
 }
 
 // Function for reading Y axis acceleration
 float Accelerometer::ReadY(){
   int B = analogRead(PinY);
-  float Y = (B - 513) / 100;
+  float Y = (B - 513.) / 100.;
   return Y;
 }
 

@@ -1,8 +1,7 @@
 // Arduino
 // Write to electric motor
 
-#ifndef MOTOR_H //checks to see if this is defined
-#define MOTOR_H //defines it if the check passes
+#pragma once
 // This prevents this header from being called twice on accident
 
 #include <Arduino.h> //allows us to use analogRead
@@ -25,8 +24,9 @@ class Motor{
   // Literally the same as clockwise except toggled High and Low
   void CounterClockwise(int speed);
 
+  // A function for turning everything off
+  void Stop();
+
   // Quick function for alternating the motor
   void debug();
 };
-
-#endif
